@@ -1,9 +1,9 @@
 import { useState } from "react";
-import Navbar from "./Navbar";
-import { useTheme } from "../components/themeContextCore.js";
+import Navbar from "./Navbar.jsx";
+import { useTheme } from "./themeContextCore.js";
 import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
-import Input from "../components/Input.jsx";
+import Input from "./Input.jsx";
 import axios from "axios";
 import { USER_API_END_POINT } from "../utils/apiEndpoint.js";
 import { toast } from "react-hot-toast";

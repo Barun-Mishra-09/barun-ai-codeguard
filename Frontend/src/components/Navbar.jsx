@@ -1,7 +1,7 @@
 import DarkModeLogo from "../Images/Code_Reviewer_logo.png";
 import LightModeLogo from "../Images/Code Reviewer Light Mode.png";
 import { Sun, Moon, LogOut } from "lucide-react";
-import { useTheme } from "../components/themeContextCore.js";
+import { useTheme } from "./themeContextCore.js";
 import { toast } from "react-hot-toast";
 import axios from "axios";
 import { USER_API_END_POINT } from "../utils/apiEndpoint.js";

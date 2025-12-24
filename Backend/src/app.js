@@ -1,7 +1,7 @@
 import express from "express";
 
-import aiRoutes from "../src/routes/ai.routes.js";
-import userRoute from "../src/routes/user.route.js";
+import aiRoutes from "./routes/ai.routes.js";
+import userRoute from "./routes/user.route.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 
