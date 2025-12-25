@@ -333,7 +333,12 @@ const LeftCodeEditor = () => {
               value={selectedLanguage}
               onChange={handleLanguageChange}
               options={options}
-              styles={darkMode ? darkSelectStyles : lightSelectStyles}
+              styles={{
+                ...(darkMode ? darkSelectStyles : lightSelectStyles),
+                menuPortal: (base) => ({ ...base, zIndex: 9999 }),
+              }}
+              menuPortalTarget={document.body}
+              menuPosition="fixed"
               className="min-w-[180px]"
             />
 
