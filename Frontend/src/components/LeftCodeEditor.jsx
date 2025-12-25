@@ -148,8 +148,10 @@ const CustomCodeEditor = ({ code, onChange, language, darkMode }) => {
 
 const extractImprovedCode = (reviewText) => {
   if (!reviewText) return null;
+
   const regex =
-    /✨\s*Improved\s*\/\s*Refactored\s*Code[\s\S]*?```[\w+-]*\n([\s\S]*?)```/i;
+    /##\s*✨\s*Improved[\s\S]*?Code[\s\S]*?```[\w+-]*\n([\s\S]*?)```/i;
+
   const match = reviewText.match(regex);
   return match ? match[1].trim() : null;
 };
@@ -167,6 +169,7 @@ const LeftCodeEditor = () => {
   const options = [
     { value: "javascript", label: "JavaScript" },
     { value: "typescript", label: "TypeScript" },
+    { value: "jsx", label: "React (JSX)" },
     { value: "python", label: "Python" },
     { value: "java", label: "Java" },
     { value: "c", label: "C" },
@@ -333,12 +336,7 @@ const LeftCodeEditor = () => {
               value={selectedLanguage}
               onChange={handleLanguageChange}
               options={options}
-              styles={{
-                ...(darkMode ? darkSelectStyles : lightSelectStyles),
-                menuPortal: (base) => ({ ...base, zIndex: 9999 }),
-              }}
-              menuPortalTarget={document.body}
-              menuPosition="fixed"
+              styles={darkMode ? darkSelectStyles : lightSelectStyles}
               className="min-w-[180px]"
             />
 
